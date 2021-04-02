@@ -5,9 +5,18 @@ import 'package:meals/utils/app_routes.dart';
 import 'screens/settings_screen.dart';
 import 'screens/tabs_screen.dart';
 
+import 'models/meal.dart';
+import 'datas/dummy_data.dart';
+
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  List<Meal> _avaiableMeals = DUMMY_MEALS;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -36,7 +45,8 @@ class MyApp extends StatelessWidget {
         // Rota da tela d home
         AppRoutes.HOME: (ctx) => TabsScreem(),
         // Rota de quando é selecionado um tipo de comida
-        AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
+        AppRoutes.CATEGORIES_MEALS: (ctx) =>
+            CategoriesMealsScreen(_avaiableMeals),
         // Rota que mostra mais detalhes da refeição
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
         // Rota que mostra a tela de configurações
