@@ -37,14 +37,18 @@ class _TabsScreemState extends State<TabsScreem> {
         selectedItemColor: Theme.of(context).accentColor,
         // Mostra qual dos itens está selecionado
         currentIndex: _selectedIndexScreen,
+        // Cria uma animação na tabBar
+        type: BottomNavigationBarType.shifting,
         onTap: _selectScreen,
         backgroundColor: Theme.of(context).primaryColor,
         items: [
           BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.category),
             title: Text('Categorias'),
           ),
           BottomNavigationBarItem(
+            backgroundColor: Theme.of(context).primaryColor,
             icon: Icon(Icons.star),
             title: Text('Favoritos'),
           ),
