@@ -9,9 +9,9 @@ class TabsScreem extends StatefulWidget {
 
 class _TabsScreemState extends State<TabsScreem> {
   int _selectedIndexScreen = 0;
-  final List<Widget> _screens = [
-    CategoriesScreen(),
-    FavoriteScreen(),
+  final List<Map<String, Object>> _screens = [
+    {'title': 'Lista de categorias', 'screen': CategoriesScreen()},
+    {'title': 'Meus favoritos', 'screen': FavoriteScreen()},
   ];
 
   _selectScreen(int index) {
@@ -25,10 +25,12 @@ class _TabsScreemState extends State<TabsScreem> {
     // Widget para criar tabbar
     return Scaffold(
       appBar: AppBar(
-        title: Text('Vamos Cozinhar'),
+        title: Text(
+          _screens[_selectedIndexScreen]['title'],
+        ),
         centerTitle: true,
       ),
-      body: _screens[_selectedIndexScreen],
+      body: _screens[_selectedIndexScreen]['screen'],
       // Cria uma tabbar na parte inferior
       bottomNavigationBar: BottomNavigationBar(
         // cor quando o item ñ está selecionado
