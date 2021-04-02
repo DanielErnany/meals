@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meals/screens/categories_meals_screen.dart';
 import 'package:meals/screens/meal_detail_screen.dart';
 import 'package:meals/utils/app_routes.dart';
-import 'screens/categories_screen.dart';
+import 'screens/settings.dart';
 import 'screens/tabs_screen.dart';
 
 void main() => runApp(MyApp());
@@ -39,6 +39,8 @@ class MyApp extends StatelessWidget {
         AppRoutes.CATEGORIES_MEALS: (ctx) => CategoriesMealsScreen(),
         // Rota que mostra mais detalhes da refeição
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
+        // Rota que mostra a tela de configurações
+        AppRoutes.SETTINGS: (ctx) => SettingsScreen(),
       },
       // onGenerateRoute serve para criar rotas dinamicamente
       //  caso alguma rotes seja chamada e ñ esteja cadastrada
