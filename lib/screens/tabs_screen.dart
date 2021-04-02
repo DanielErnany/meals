@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'categories_screen.dart';
 import 'favorite_screen.dart';
+import '../components/main_drawer.dart';
 
 class TabsScreem extends StatefulWidget {
   @override
@@ -30,6 +31,8 @@ class _TabsScreemState extends State<TabsScreem> {
         ),
         centerTitle: true,
       ),
+      // Cria um menu lateral(drawer) na aplicação
+      drawer: MainDrawer(),
       body: _screens[_selectedIndexScreen]['screen'],
       // Cria uma tabbar na parte inferior
       bottomNavigationBar: BottomNavigationBar(
