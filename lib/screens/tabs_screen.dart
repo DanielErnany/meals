@@ -10,7 +10,7 @@ class TabsScreem extends StatelessWidget {
       // Numero de abas que o tabbar vai ter
       length: 2,
       // Define a aba inicial
-      initialIndex: 1,
+      initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
           title: Text('Vamos Cozinhar'),
