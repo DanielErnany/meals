@@ -8,12 +8,22 @@ class MealItem extends StatelessWidget {
   const MealItem(this.meal);
 
   void _selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(
+    Navigator.of(context)
+        .pushNamed(
       // rota da tela q vai ser chamada
       AppRoutes.MEAL_DETAIL,
       // passa a comida como argumento para a tela que mostra os detalhes
       arguments: meal,
-    );
+      // then faz com que quando a tela chamada seja fechada e
+      // retorne pra ela pegue o dado que foi passado no pop da tela chamada
+    )
+        .then((result) {
+      if (result == null) {
+        print('Sem resultado passado de volta');
+      } else {
+        print('O nome da refeição é $result');
+      }
+    });
   }
 
   @override
