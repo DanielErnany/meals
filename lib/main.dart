@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meals/models/settings.dart';
 import 'package:meals/screens/categories_meals_screen.dart';
 import 'package:meals/screens/meal_detail_screen.dart';
 import 'package:meals/utils/app_routes.dart';
@@ -17,6 +18,23 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   List<Meal> _avaiableMeals = DUMMY_MEALS;
+
+  void _filterMeals(Settings settings) {
+    setState(() {
+      _avaiableMeals = DUMMY_MEALS.where((meal) {
+        final filterGluten = settings.isGlutenFree && !meal.isGlutenFree;
+        final filterLactose = settings.isLactoseFree && !meal.isLactoseFree;
+        final filterVegan = settings.isVegan && !meal.isVegan;
+        final filterVegetarian = settings.isVegetarian && !meal.isVegetarian;
+
+        return !filterGluten &&
+            !filterLactose &&
+            !filterVegan &&
+            !filterVegetarian;
+      }).toList();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,7 +68,7 @@ class _MyAppState extends State<MyApp> {
         // Rota que mostra mais detalhes da refeição
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
         // Rota que mostra a tela de configurações
-        AppRoutes.SETTINGS: (ctx) => SettingsScreen(),
+        AppRoutes.SETTINGS: (ctx) => SettingsScreen(_filterMeals),
       },
       // onGenerateRoute serve para criar rotas dinamicamente
       //  caso alguma rotes seja chamada e ñ esteja cadastrada
