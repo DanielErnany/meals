@@ -17,10 +17,13 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+  Settings settings = Settings();
+
   List<Meal> _avaiableMeals = DUMMY_MEALS;
 
   void _filterMeals(Settings settings) {
     setState(() {
+      this.settings = settings;
       _avaiableMeals = DUMMY_MEALS.where((meal) {
         final filterGluten = settings.isGlutenFree && !meal.isGlutenFree;
         final filterLactose = settings.isLactoseFree && !meal.isLactoseFree;
@@ -68,7 +71,7 @@ class _MyAppState extends State<MyApp> {
         // Rota que mostra mais detalhes da refeição
         AppRoutes.MEAL_DETAIL: (ctx) => MealDetailScreen(),
         // Rota que mostra a tela de configurações
-        AppRoutes.SETTINGS: (ctx) => SettingsScreen(_filterMeals),
+        AppRoutes.SETTINGS: (ctx) => SettingsScreen(settings, _filterMeals),
       },
       // onGenerateRoute serve para criar rotas dinamicamente
       //  caso alguma rotes seja chamada e ñ esteja cadastrada
