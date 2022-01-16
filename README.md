@@ -1,4 +1,7 @@
 # Meals :cake:
+<br/>
+
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/DanielErnany/pomodoro/blob/main/LICENSE) 
 
 # Sobre o projeto :book:
 
