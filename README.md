@@ -1,16 +1,33 @@
-# meals
+# Meals :cake:
 
-A new Flutter project.
+# Sobre o projeto :book:
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+Meals é uma aplicação Flutter, a aplicação foi feita para exercitar e aprimorar meus conhecimentos sobre Flutter. Está é uma aplicação para consulta de modo de preparo de receitas, que mostra para os usuarios diferentes tipos de comida, os ingredientes e modo de preparo.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Conhecimentos adquiridos:heavy_check_mark:
+>-Navegação usando rotas nomeadas.<br/>
+>-Passagem de dados entre as telas usando argumentos nas rotas, receber dados de volta de outras telas usando Future.<br/>
+>-Adicionar tabs na AppBar ou na parte inferior da tela.<br/>
+>-Alternar entre as tabs na mesma tela.<br/>
+>-Adicionar um Drawer e usa-lo para navegar entre as telas.<br/>
+
+
+
+## Layout mobile :iphone:
+|Tela principal aba categorias|Tela principal aba favoritos|Drawer aberto|Tela configurações|
+| -------- | -------- | -------- | -------- |
+|![Mobile categorias](https://github.com/DanielErnany/assets/raw/main/meals/telaPrincipalTabCategorias.png)|![Mobile favoritos](https://github.com/DanielErnany/assets/raw/main/meals/telaPrincipalTabFavoritos.png)|![Mobile drawer](https://github.com/DanielErnany/assets/raw/main/meals/drawer.png)|![Mobile configurações](https://github.com/DanielErnany/assets/raw/main/meals/telaConfigurações.png)|
+ 
+ |Tela da categoria|Tela detalhes comida |
+ | -------- |-------- |
+ |![Mobile categoria](https://github.com/DanielErnany/assets/raw/main/meals/telaCategoria.png)|![Mobile detalhes](https://github.com/DanielErnany/assets/raw/main/meals/telaDetalhesComida.png)|
+ 
+# Autor :
+
+
+ ## <a href="https://github.com/DanielErnany">Daniel Ernany</a>
+
+
